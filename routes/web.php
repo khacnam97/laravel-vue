@@ -24,10 +24,14 @@ use Illuminate\Support\Facades\Route;
 //});
 
 
-Route::get('/', function () {
+Route::get('/post/{any}', function () {
     return view('layouts/app');
 })->where('any', '.*');
 
 Route::get('/admin', function () {
     return view('admin/index');
+});
+
+Route::get('/', function () {
+    return view('layouts/app');
 });
