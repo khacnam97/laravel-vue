@@ -10,7 +10,7 @@
             </div>
         </div><br />
 
-        <table class="table table-hover">
+        <table class="table table-bordered">
             <thead>
             <tr>
                 <th>ID</th>
@@ -20,12 +20,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="post in posts" :key="post.id">
+            <tr v-for="(post ,key) in posts" :key="post.id">
                 <td>{{ post.id }}</td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.body }}</td>
-                <td><router-link :to="{name: 'edit', params: { id: post.id }}" class="btn btn-primary">Edit</router-link></td>
-                <td><button class="btn btn-danger">Delete</button></td>
+                <td><router-link :to="{name: 'edit', params: { id: post.id }}" class="btn btn-primary mr-2">Edit</router-link>
+                    <button class="btn btn-danger" @click.prevent="deletePost(post.id,key)">Delete</button></td>
             </tr>
             </tbody>
         </table>
@@ -40,7 +40,7 @@ export default {
         }
     },
     created() {
-        let uri = 'http://localhost/laravel-vue/public/api/posts';
+        let uri = 'http://127.0.0.1:8000/api/posts';
         this.axios.get(uri).then(response => {
             this.posts = response.data.data;
         });
@@ -48,7 +48,7 @@ export default {
     methods: {
         deletePost(id)
         {
-            let uri = `http://localhost/laravel-vue/public/api/post/delete/${id}`;
+            let uri = `http://127.0.0.1:8000/api/post/delete/${id}`;
             this.axios.delete(uri).then(response => {
                 this.posts.splice(this.posts.indexOf(id), 1);
             });

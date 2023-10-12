@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         addPost(){
-            let uri = 'http://localhost/laravel-vue/public/api/post/create';
+            let uri = 'http://127.0.0.1:8000/api/post/create';
             this.axios.post(uri, this.post).then((response) => {
                 this.$router.push({name: 'posts'});
             });

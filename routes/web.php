@@ -14,16 +14,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('layouts/app');
-});
+//
+//Route::get('/post', function () {
+//    return view('layouts/app');
+//});
 
 //Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
 //    Route::get('/', [CompanyController::class, 'index'])->name('companies.index');
 //});
 
-//Route::get('/post-all', [PostController::class, 'show'])->name('post.show');
-Route::get('{any}', function () {
-    return view('layouts');
+
+Route::get('/', function () {
+    return view('layouts/app');
 })->where('any', '.*');
+
+Route::get('/admin', function () {
+    return view('admin/index');
+});
