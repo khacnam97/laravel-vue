@@ -36,14 +36,14 @@ export default {
         }
     },
     created() {
-        let uri = `http://localhost/laravel-vue/public/api/post/edit/${this.$route.params.id}`;
+        let uri = `http://127.0.0.1:8000/api/post/edit/${this.$route.params.id}`;
         this.axios.get(uri).then((response) => {
             this.post = response.data;
         });
     },
     methods: {
         updatePost() {
-            let uri = `http://localhost/laravel-vue/public/api/post/update/${this.$route.params.id}`;
+            let uri = `http://127.0.0.1:8000/api/post/update/${this.$route.params.id}`;
             this.axios.post(uri, this.post).then((response) => {
                 this.$router.push({name: 'posts'});
             });
