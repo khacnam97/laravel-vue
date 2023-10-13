@@ -15,11 +15,13 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
+        "sweetalert2": "^11.7.32",
         "vue": "^3.2.36",
         "vue-loader": "^17.3.0"
     },
     "dependencies": {
         "vue-axios": "^3.5.2",
-        "vue-router": "^4.2.5"
+        "vue-router": "^4.2.5",
+        "vue-sweetalert2": "^5.0.5"
     }
 }
