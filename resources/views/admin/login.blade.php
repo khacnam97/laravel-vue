@@ -18,9 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
-<div id="admin_index">
+<div id="admin">
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
