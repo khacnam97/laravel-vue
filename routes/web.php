@@ -29,7 +29,14 @@ Route::get('/post/{any}', function () {
 })->where('any', '.*');
 
 Route::get('/admin', function () {
+    return view('admin/login');
+});
+Route::get('/admin/{any}', function () {
     return view('admin/index');
+})->where('any', '.*');
+
+Route::get('/', function () {
+    return view('layouts/app');
 });
 
 Route::get('/', function () {
