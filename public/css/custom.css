@@ -1,0 +1,270 @@
+
+/*header {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  min-height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-image: url('../picture/anhnen.jpg');
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+}
+*/
+#app{
+  overflow: 
+}
+#btnsearch{
+    width: 120px;
+}
+#searchhead{
+/*  justify-content: center;
+  display: flex;*/
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+}
+#inputsearch {
+
+}
+#logo5{
+  width: 100px; height: 40px; margin-left: 50px;
+}
+#homeHeading{
+  font-size: 45px; margin-left: 20%; margin-right: 20%;
+}
+@media only screen and (max-width: 600px) {
+  header {
+    height : 700px;
+  }
+  .header-content {
+    height: 500px;
+  }
+  #homeHeading{
+    font-size: 25px; margin-left: 10%; margin-right: 10%;
+  }
+  #navbarSupportedContent{ 
+    background-color: #666666;
+    text-align: right;
+    margin: 0px;
+    padding-right:  10%;
+  }
+  #searchhead {
+  }
+  #btnsearch {
+    width: 60px;
+  }
+  #inputsearch {
+    width: 140px;
+    margin-right: 20px;
+  }
+  #invite {
+    display: none;
+  }
+  #logo5{
+    margin-left:10px;
+
+  }
+}
+@media only screen and (max-width: 400px) {
+  header {
+    height : 700px;
+  }
+
+  .header-content {
+    height: 500px;
+  }
+  #homeHeading{
+    font-size: 25px; margin-left: 10%; margin-right: 10%;
+  }
+  #navbarSupportedContent{ 
+    background-color: #666666;
+    text-align: right;
+    margin: 0px;
+    padding-right:  10%;
+  }
+
+  #searchhead {
+  }
+  #btnsearch {
+    width: 60px;
+  }
+  #inputsearch {
+    width: 120px;
+    margin-right: 10px;
+  }
+  #invite {
+    display: none;
+  }
+  #logo5{
+    margin-left: 10px;
+    
+  }
+}
+.header-content {
+  background-color: rgba(0,0,0.5,0.4);
+  position: absolute;
+  
+
+  /* text-align: center; */
+  padding: 10px 15px ;
+  width: 100%;
+}
+
+.header-content .header-content-inner
+{
+  margin: 10px 20px;
+}
+
+#scr1:hover{
+  color: black;
+}
+#main-footer {
+  margin-top: 1000px;
+  width: 100%;
+}
+#main-footer .contactnumber {
+  color: #3997A6;
+  margin-top: 10px;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+#main-footer .copyright
+{
+  font-weight: lighter;
+  font-size: 1em;
+}
+#main-footer .social {
+  margin-bottom: 10px;
+  color: #3997A6;
+}
+
+ul .inline-list-style {
+  list-style: none;
+}
+
+.list_style {
+  list-style-type: none;
+}
+#main-footer .column
+{
+  margin-top:20px;
+}
+
+#main-footer  div ul li a
+{
+  margin-top:20px;
+  color: #3997A6;
+}
+
+#card-img {
+  width:100%;
+  height:280px;
+  float:left;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+  cursor:default;
+}
+#card-img img{
+  display:block;
+  height: 200px;
+  position:relative;
+  -webkit-transition:all .4s linear;
+  transition:all .4s linear;
+}
+#card-img:hover img{
+  
+transform:scale(1.1);
+}
+
+#card-img:hover {
+
+  filter:alpha(opacity=50);
+-ms-transform:translatey(0);
+-webkit-transform:translatey(0);
+transform:translatey(0);
+}
+
+#scr2 {
+  color: white ;
+  cursor:pointer;
+}
+#scr1 {
+  color: white ;
+  cursor:pointer;
+}
+#scr3 {
+  color: white ;
+  cursor:pointer;
+}
+#scr2:hover {
+  font-size: 16px;
+  color: yellow ;
+  cursor:pointer;
+}
+#scr1:hover {
+  font-size: 16px;
+  color: yellow ;
+  cursor:pointer;
+}
+#scr3:hover {
+  font-size: 16px;
+  color: yellow ;
+  cursor:pointer;
+}
+.navbar-light .navbar-nav .nav-link{
+  color: white;
+}
+
+.carousel-inner img {
+      width: 100%;
+      height: 500px;
+  }
+
+  .map-container-2{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container-2 iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+/* Rating Star Widgets Style */
+.rating-stars ul {
+  list-style-type:none;
+  padding:0;
+  
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+.rating-stars ul > li.star {
+  display:inline-block;
+  
+}
+
+/* Idle State of the stars */
+.rating-stars ul > li.star > i.fa {
+  font-size:2.5em; /* Change the size of the stars */
+  color:#ccc; /* Color on idle state */
+}
+
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > i.fa {
+  color:#FFCC36;
+}
+
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > i.fa {
+  color:#FF912C;
+}

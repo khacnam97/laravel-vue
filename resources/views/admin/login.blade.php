@@ -21,7 +21,7 @@
 
 </head>
 <body>
-<div id="admin">
+<div id="login">
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
