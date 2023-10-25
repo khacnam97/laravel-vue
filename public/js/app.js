@@ -15531,9 +15531,11 @@ __webpack_require__.r(__webpack_exports__);
             icon: 'warning'
           });
         } else {
-          _this.$router.push({
-            name: 'index'
-          });
+          window.location.href = "/admin/index";
+          // this.$router.push({name: 'index'});
+          // this.$router.push({
+          //     path: `/admin/index`
+          // })
           // console.log('success')
           // Swal.fire({
           //     title: 'Hurry',
@@ -16190,7 +16192,7 @@ var routes = [{
   component: _components_post_EditComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
   name: 'admin',
-  path: '/admin',
+  path: '/login',
   component: _components_admin_login_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
 }, {
   name: 'index',
@@ -16209,8 +16211,8 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_7__.createRouter)({
 
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_10__["default"]).use(router).use(vue_axios__WEBPACK_IMPORTED_MODULE_8__["default"], (axios__WEBPACK_IMPORTED_MODULE_9___default())).mount('#app');
-(0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_AppLogin_vue__WEBPACK_IMPORTED_MODULE_11__["default"]).use(router).use(vue_axios__WEBPACK_IMPORTED_MODULE_8__["default"], (axios__WEBPACK_IMPORTED_MODULE_9___default())).mount('#admin');
-(0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_AppAdmin_vue__WEBPACK_IMPORTED_MODULE_12__["default"]).use(router).use(vue_axios__WEBPACK_IMPORTED_MODULE_8__["default"], (axios__WEBPACK_IMPORTED_MODULE_9___default())).mount('#admin_index');
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_AppLogin_vue__WEBPACK_IMPORTED_MODULE_11__["default"]).use(router).use(vue_axios__WEBPACK_IMPORTED_MODULE_8__["default"], (axios__WEBPACK_IMPORTED_MODULE_9___default())).mount('#login');
+// createApp(AppAdmin).use(router).use(VueAxios, axios).mount('#admin_index');
 
 /***/ }),
 
@@ -16287,39 +16289,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_css_login_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! -!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../css/login.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./resources/css/login.css");
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_css_login_css__WEBPACK_IMPORTED_MODULE_1__["default"]);
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./resources/css/login.css":
-/*!***********************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./resources/css/login.css ***!
-  \***********************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    font-family: Raleway, sans-serif;\n}\n\n.container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 100vh;\n}\n\n.screen {\n    background: linear-gradient(90deg, #5D54A4, #7C78B8);\n    position: relative;\n    height: 600px;\n    width: 360px;\n    box-shadow: 0px 0px 24px #5C5696;\n}\n\n.screen__content {\n    z-index: 1;\n    position: relative;\n    height: 100%;\n}\n\n.screen__background {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 0;\n    -webkit-clip-path: inset(0 0 0 0);\n    clip-path: inset(0 0 0 0);\n}\n\n.screen__background__shape {\n    transform: rotate(45deg);\n    position: absolute;\n}\n\n.screen__background__shape1 {\n    height: 520px;\n    width: 520px;\n    background: #FFF;\n    top: -50px;\n    right: 120px;\n    border-radius: 0 72px 0 0;\n}\n\n.screen__background__shape2 {\n    height: 220px;\n    width: 220px;\n    background: #6C63AC;\n    top: -172px;\n    right: 0;\n    border-radius: 32px;\n}\n\n.screen__background__shape3 {\n    height: 540px;\n    width: 190px;\n    background: linear-gradient(270deg, #5D54A4, #6A679E);\n    top: -24px;\n    right: 0;\n    border-radius: 32px;\n}\n\n.screen__background__shape4 {\n    height: 400px;\n    width: 200px;\n    background: #7E7BB9;\n    top: 420px;\n    right: 50px;\n    border-radius: 60px;\n}\n\n.login {\n    width: 320px;\n    padding: 30px;\n    padding-top: 156px;\n}\n\n.login__field {\n    padding: 20px 0px;\n    position: relative;\n}\n\n.login__icon {\n    position: absolute;\n    top: 30px;\n    color: #7875B5;\n}\n\n.login__input {\n    border: none;\n    border-bottom: 2px solid #D1D1D4;\n    background: none;\n    padding: 10px;\n    padding-left: 24px;\n    font-weight: 700;\n    width: 75%;\n    transition: .2s;\n}\n\n.login__input:active,\n.login__input:focus,\n.login__input:hover {\n    outline: none;\n    border-bottom-color: #6A679E;\n}\n\n.login__submit {\n    background: #fff;\n    font-size: 14px;\n    margin-top: 30px;\n    padding: 16px 20px;\n    border-radius: 26px;\n    border: 1px solid #D4D3E8;\n    text-transform: uppercase;\n    font-weight: 700;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    color: #4C489D;\n    box-shadow: 0px 2px 2px #5C5696;\n    cursor: pointer;\n    transition: .2s;\n}\n\n.login__submit:active,\n.login__submit:focus,\n.login__submit:hover {\n    border-color: #6A679E;\n    outline: none;\n}\n\n.button__icon {\n    font-size: 24px;\n    margin-left: auto;\n    color: #7875B5;\n}\n\n.social-login {\n    position: absolute;\n    height: 140px;\n    width: 160px;\n    text-align: center;\n    bottom: 0px;\n    right: 0px;\n    color: #fff;\n}\n\n.social-icons {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.social-login__icon {\n    padding: 20px 10px;\n    color: #fff;\n    text-decoration: none;\n    text-shadow: 0px 0px 8px #7875B5;\n}\n\n.social-login__icon:hover {\n    transform: scale(1.5);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-e088f1a4] {\n        box-sizing: border-box;\n        margin: 0;\n        padding: 0;\n        font-family: Raleway, sans-serif;\n}\n.container[data-v-e088f1a4] {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        min-height: 100vh;\n}\n.screen[data-v-e088f1a4] {\n        background: linear-gradient(90deg, #5D54A4, #7C78B8);\n        position: relative;\n        height: 600px;\n        width: 360px;\n        box-shadow: 0px 0px 24px #5C5696;\n}\n.screen__content[data-v-e088f1a4] {\n        z-index: 1;\n        position: relative;\n        height: 100%;\n}\n.screen__background[data-v-e088f1a4] {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        z-index: 0;\n        -webkit-clip-path: inset(0 0 0 0);\n        clip-path: inset(0 0 0 0);\n}\n.screen__background__shape[data-v-e088f1a4] {\n        transform: rotate(45deg);\n        position: absolute;\n}\n.screen__background__shape1[data-v-e088f1a4] {\n        height: 520px;\n        width: 520px;\n        background: #FFF;\n        top: -50px;\n        right: 120px;\n        border-radius: 0 72px 0 0;\n}\n.screen__background__shape2[data-v-e088f1a4] {\n        height: 220px;\n        width: 220px;\n        background: #6C63AC;\n        top: -172px;\n        right: 0;\n        border-radius: 32px;\n}\n.screen__background__shape3[data-v-e088f1a4] {\n        height: 540px;\n        width: 190px;\n        background: linear-gradient(270deg, #5D54A4, #6A679E);\n        top: -24px;\n        right: 0;\n        border-radius: 32px;\n}\n.screen__background__shape4[data-v-e088f1a4] {\n        height: 400px;\n        width: 200px;\n        background: #7E7BB9;\n        top: 420px;\n        right: 50px;\n        border-radius: 60px;\n}\n.login[data-v-e088f1a4] {\n        width: 320px;\n        padding: 30px;\n        padding-top: 156px;\n}\n.login__field[data-v-e088f1a4] {\n        padding: 20px 0px;\n        position: relative;\n}\n.login__icon[data-v-e088f1a4] {\n        position: absolute;\n        top: 30px;\n        color: #7875B5;\n}\n.login__input[data-v-e088f1a4] {\n        border: none;\n        border-bottom: 2px solid #D1D1D4;\n        background: none;\n        padding: 10px;\n        padding-left: 24px;\n        font-weight: 700;\n        width: 75%;\n        transition: .2s;\n}\n.login__input[data-v-e088f1a4]:active,\n    .login__input[data-v-e088f1a4]:focus,\n    .login__input[data-v-e088f1a4]:hover {\n        outline: none;\n        border-bottom-color: #6A679E;\n}\n.login__submit[data-v-e088f1a4] {\n        background: #fff;\n        font-size: 14px;\n        margin-top: 30px;\n        padding: 16px 20px;\n        border-radius: 26px;\n        border: 1px solid #D4D3E8;\n        text-transform: uppercase;\n        font-weight: 700;\n        display: flex;\n        align-items: center;\n        width: 100%;\n        color: #4C489D;\n        box-shadow: 0px 2px 2px #5C5696;\n        cursor: pointer;\n        transition: .2s;\n}\n.login__submit[data-v-e088f1a4]:active,\n    .login__submit[data-v-e088f1a4]:focus,\n    .login__submit[data-v-e088f1a4]:hover {\n        border-color: #6A679E;\n        outline: none;\n}\n.button__icon[data-v-e088f1a4] {\n        font-size: 24px;\n        margin-left: auto;\n        color: #7875B5;\n}\n.social-login[data-v-e088f1a4] {\n        position: absolute;\n        height: 140px;\n        width: 160px;\n        text-align: center;\n        bottom: 0px;\n        right: 0px;\n        color: #fff;\n}\n.social-icons[data-v-e088f1a4] {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n}\n.social-login__icon[data-v-e088f1a4] {\n        padding: 20px 10px;\n        color: #fff;\n        text-decoration: none;\n        text-shadow: 0px 0px 8px #7875B5;\n}\n.social-login__icon[data-v-e088f1a4]:hover {\n        transform: scale(1.5);\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

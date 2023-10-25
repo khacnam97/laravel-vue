@@ -28,15 +28,31 @@ Route::get('/post/{any}', function () {
     return view('layouts/app');
 })->where('any', '.*');
 
-Route::get('/admin', function () {
+Route::get('/login', function () {
     return view('admin/login');
 });
-Route::get('/admin/{any}', function () {
-    return view('admin/index');
-})->where('any', '.*');
+//Route::get('/admin/{any}', function () {
+//    return view('admin/index');
+//})->where('any', '.*');
 
 Route::get('/', function () {
     return view('layouts/app');
+});
+
+Route::get('/admin-x', function () {
+    return view('layouts/admin');
+});
+Route::get('/admin/{any}', function () {
+    return view('admin/user/index');
+})->where('any', '.*');
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
+//    Route::get('/', 'AdminController@index')->name('admin.index')->middleware('admin');
+    Route::get('/admin/{any}', function () {
+        return view('admin/user/index');
+    })->where('any', '.*');
+    Route::group(['prefix'=>'user','namespace'=>'user'],function(){
+    });
+
 });
 
 Route::get('/', function () {
