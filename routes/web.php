@@ -52,5 +52,5 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     })->where('any', '.*');
     Route::group(['prefix'=>'user','namespace'=>'user'],function(){
     });
-
+//kakaka
 });
