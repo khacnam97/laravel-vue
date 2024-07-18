@@ -74,7 +74,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="">Trang chủ</a>
-
+                <a class="dropdown-item" href="{{ route('logout.perform') }}">Logout</a>
             </div>
         </li>
     </ul>
