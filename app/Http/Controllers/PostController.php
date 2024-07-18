@@ -50,7 +50,7 @@ class PostController extends Controller
         $post = Post::find($id);
 
         $post->delete();
-
+        //kakakak
         return response()->json('successfully deleted');
     }
 }

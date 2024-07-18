@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,18 +40,16 @@ Route::get('/', function () {
     return view('layouts/app');
 });
 
-Route::get('/admin-x', function () {
-    return view('layouts/admin');
-});
-Route::get('/admin/{any}', function () {
-    return view('admin/user/index');
-})->where('any', '.*');
-Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
-//    Route::get('/', 'AdminController@index')->name('admin.index')->middleware('admin');
-    Route::get('/admin/{any}', function () {
-        return view('admin/user/index');
-    })->where('any', '.*');
-    Route::group(['prefix'=>'user','namespace'=>'user'],function(){
-    });
+//Route::get('/admin-x', function () {
+//    return view('layouts/admin');
+//});
+//Route::get('/admin/{any}', function () {
+//    return view('admin/user/index');
+//})->where('any', '.*');
 
+Route::group(['middleware' => ['auth']], function() {
+    /**
+     * Logout Route
+     */
+    Route::get('/logout', [LogoutController::class, 'perform'])->name('logout.perform');
 });
