@@ -43,9 +43,13 @@ Route::get('/', function () {
 //Route::get('/admin-x', function () {
 //    return view('layouts/admin');
 //});
-//Route::get('/admin/{any}', function () {
-//    return view('admin/user/index');
-//})->where('any', '.*');
+Route::get('/admin/user/create', function () {
+    return view('admin/user/create');
+})->name('create.user');
+
+Route::get('/admin/index', function () {
+    return view('admin/user/index');
+})->where('any', '.*');
 
 Route::group(['middleware' => ['auth']], function() {
     /**

@@ -21,6 +21,7 @@
 </head>
 <body>
 <div id="admin_index">
+    kakaka
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>

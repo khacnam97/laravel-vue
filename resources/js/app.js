@@ -38,6 +38,11 @@ const routes = [
         path: '/admin/index',
         component: AdminIndexComponent
     },
+    {
+        name: 'index',
+        path: '/admin/user/create',
+        component: AdminIndexComponent
+    },
 ];
 
 window.Vue = require('vue');
@@ -55,4 +60,4 @@ import AppLogin from './AppLogin.vue';
 import AppAdmin from './AppAdmin.vue';
 createApp(App).use(router).use(VueAxios, axios).mount('#app');
 createApp(AppLogin).use(router).use(VueAxios, axios).mount('#login');
-// createApp(AppAdmin).use(router).use(VueAxios, axios).mount('#admin_index');
+createApp(AppAdmin).use(router).use(VueAxios, axios).mount('#admin_index');

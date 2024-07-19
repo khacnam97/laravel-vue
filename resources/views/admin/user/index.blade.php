@@ -23,33 +23,10 @@
                 {{Session::get('error')}}
             </div>
         @endif
-        <div class="container">
-
-            <!-- The Modal -->
-            <div class="modal" id="myModal1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Thêm Người dùng </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
         <div class="card-body">
             <div style="margin-bottom: 15px">
-                <button data-toggle="modal" data-target="#myModal1" class="btn btn-success "><i class="fas fa-plus"></i> Thêm</button>
+                <a href="{{route('create.user')}}" class="btn btn-success "><i class="fas fa-plus"></i> Thêm</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable">
