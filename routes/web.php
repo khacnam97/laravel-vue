@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,6 +53,7 @@ Route::get('/admin/index', function () {
     return view('admin/user/index');
 })->where('any', '.*');
 
+Route::post('register', [RegisterController::class, 'create'])->name('register');
 Route::group(['middleware' => ['auth']], function() {
     /**
      * Logout Route
