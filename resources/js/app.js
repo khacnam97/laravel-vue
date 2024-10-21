@@ -29,7 +29,7 @@ const routes = [
     },
     {
         name: 'admin',
-        path: '/login',
+        path: '/api/login',
         component: AdminComponent
     },
 
