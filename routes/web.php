@@ -3,6 +3,7 @@
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +30,7 @@ Route::get('/post/{any}', function () {
     return view('layouts/app');
 })->where('any', '.*');
 
-Route::get('/login', function () {
+Route::get('/api/login', function () {
     return view('admin/login');
 });
 //Route::get('/admin/{any}', function () {
@@ -43,13 +44,20 @@ Route::get('/', function () {
 //Route::get('/admin-x', function () {
 //    return view('layouts/admin');
 //});
-//Route::get('/admin/{any}', function () {
-//    return view('admin/user/index');
-//})->where('any', '.*');
+Route::get('/admin/index', function () {
+    return view('admin/user/index');
+});
+
+
 
 Route::group(['middleware' => ['auth']], function() {
     /**
      * Logout Route
      */
     Route::get('/logout', [LogoutController::class, 'perform'])->name('logout.perform');
+    Route::group(['middleware' => ['role:admin']], function () {
+        Route::get('/admin/index', [UserController::class, 'index'])->name('user.index');
+        Route::get('/admin/user/create', [UserController::class, 'create'])->name('user.create');
+        Route::post("add-new", [UserController::class, 'addNew'])->name('user.addNew');
+    });
 });
