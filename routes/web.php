@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -30,9 +31,9 @@ Route::get('/post/{any}', function () {
     return view('layouts/app');
 })->where('any', '.*');
 
-Route::get('/api/login', function () {
-    return view('admin/login');
-});
+//Route::get('/api/login', function () {
+//    return view('admin/login');
+//});
 //Route::get('/admin/{any}', function () {
 //    return view('admin/index');
 //})->where('any', '.*');
@@ -48,7 +49,8 @@ Route::get('/admin/index', function () {
     return view('admin/user/index');
 });
 
-
+Route::get('/login', [LoginController::class, 'getLogin'])->name('getLogin');
+Route::post('/login', [LoginController::class, 'index'])->name('login');
 
 Route::group(['middleware' => ['auth']], function() {
     /**

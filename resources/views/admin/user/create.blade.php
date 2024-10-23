@@ -34,23 +34,33 @@
                 @method('POST')
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <label for="inputAddress">UserName</label>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+
+                        @include('errors.alert_error', ['name'=> 'name'])
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Password</label>
-                        <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"  value="{{ old('password') }}"  id="inputPassword4" placeholder="Password">
+                        @include('errors.alert_error', ['name'=> 'password'])
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputAddress">UserName</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="User Name">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
                     </div>
+
                     <div class="form-group col-md-6">
                         <label for="inputAddress">Address</label>
                         <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
                     </div>
+                </div>
+                <div class="form-check" style="padding-bottom: 10px">
+                    <input class="form-check-input" type="checkbox" value="1" name="role_id" id="role_id">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Check Admin
+                    </label>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -7,41 +7,39 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <title>@yield('title')</title>
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- Pogo Slider CSS -->
-    <link rel="stylesheet" href="{{ asset('css/pogo-slider.min.css') }}">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+{{--    <link rel="stylesheet" href="{{ asset('css/pogo-slider.min.css') }}">--}}
+{{--    <!-- Site CSS -->--}}
+{{--    <link rel="stylesheet" href="{{ asset('css/style.css') }}">--}}
+{{--    <!-- Responsive CSS -->--}}
+{{--    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-
-    <div id="app">
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-{{--    <div id="app">--}}
-{{--    </div>--}}
-<script src="{{ mix('js/app.js') }}"></script>
+<div id="app">
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 {{--<!-- ALL JS FILES -->--}}
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
