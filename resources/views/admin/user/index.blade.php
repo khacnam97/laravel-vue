@@ -32,13 +32,11 @@
                 <table class="table table-bordered" id="dataTable">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Tên người dùng</th>
+                        <th>Name</th>
                         <th>Email</th>
-                        <th>Trạng thái</th>
-                        <th>Vai trò</th>
-                        <th>Ngày tạo</th>
-                        <th>Hoạt động</th>
+                        <th>Address</th>
+                        <th>Role</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,6 +44,16 @@
                             <tr>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
+                                <td>{{$user->address}}</td>
+                                <td>{{$user->roleName == 'admin' ? 'admin' : 'User Thường'}}</td>
+                                <td>
+                                    @if(Auth::id() != $user->id )
+                                        <a class="btn btn-primary" href="{{route('user.edit', $user->id)}}">Edit</a>
+                                        <button type="button" class="btn btn-danger" >
+                                            <a href="{{route('user.delete', $user->id)}}" style="color: white;text-decoration: none;" onclick="return confirm ('bạn có muốn xóa user {{$user->name}}')">Xóa</a>
+                                        </button>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -54,4 +62,7 @@
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
+    <script>
+        setInterval(function(){ $(".alert").fadeOut(); }, 3000);
+    </script>
 @endsection

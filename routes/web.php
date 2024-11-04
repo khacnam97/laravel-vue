@@ -61,5 +61,9 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/admin/index', [UserController::class, 'index'])->name('user.index');
         Route::get('/admin/user/create', [UserController::class, 'create'])->name('user.create');
         Route::post("add-new", [UserController::class, 'addNew'])->name('user.addNew');
+        Route::get('/admin/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+        Route::post('/admin/user/update/{id}', [UserController::class, 'update'])->name('user.update');
+        Route::get('/admin/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
+
     });
 });

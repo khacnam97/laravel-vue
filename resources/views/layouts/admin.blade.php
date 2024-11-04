@@ -91,8 +91,11 @@
                 <span>Bảng điều khiển </span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="">
+        @php
+            $currentRoute = Route::currentRouteName();
+        @endphp
+        <li class="nav-item @if ($currentRoute === 'user.index') active @endif">
+            <a class="nav-link" href="{{route('user.index')}}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Người dùng</span></a>
         </li>
