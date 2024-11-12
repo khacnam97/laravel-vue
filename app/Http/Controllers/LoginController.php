@@ -13,7 +13,7 @@ class LoginController extends Controller
     public function getLogin()
     {
         if(Auth::check()) {
-            return redirect()->route('get-analyze');
+            return redirect()->route('user.index');
         }
         return view('login');
     }

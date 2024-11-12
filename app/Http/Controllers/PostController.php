@@ -50,7 +50,11 @@ class PostController extends Controller
         $post = Post::find($id);
 
         $post->delete();
-        //kakakak
         return response()->json('successfully deleted');
+    }
+
+    public function adminIndex() {
+        $post = Post::all();
+        return view('admin/post/index', ['post' => $post]);
     }
 }

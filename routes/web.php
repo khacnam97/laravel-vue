@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -65,5 +66,13 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/admin/user/update/{id}', [UserController::class, 'update'])->name('user.update');
         Route::get('/admin/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
 
+        Route::get('/admin/post', [PostController::class, 'adminIndex'])->name('post.index');
+
+        Route::get('/admin/categories', [CategoriesController::class, 'index'])->name('categories.index');
+        Route::get('/admin/categories/create', [CategoriesController::class, 'create'])->name('categories.create');
+        Route::post('category-add-new', [CategoriesController::class, 'addNew'])->name('categories.addNew');
+        Route::get('/admin/categories/edit/{id}', [CategoriesController::class, 'edit'])->name('categories.edit');
+        Route::post('/admin/categories/update/{id}', [CategoriesController::class, 'update'])->name('categories.update');
+        Route::get('/admin/categories/delete/{id}', [CategoriesController::class, 'delete'])->name('categories.delete');
     });
 });

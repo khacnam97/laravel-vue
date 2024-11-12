@@ -6,8 +6,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -69,10 +71,19 @@ class UserController extends Controller
         return redirect(route("user.index"));
     }
 
-    public function delete($id){
-        $user = User::find($id);
-        $user->delete();
-        return redirect()->back()->with('success', 'Delete success');
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function delete($id): RedirectResponse
+    {
+        try {
+            $user = User::find($id);
+            $user->delete();
+            return redirect()->back()->with('success', 'Delete success');
+        }catch (\Exception $e){
+            Log::error($e);
+        }
     }
 
     public function getRole(){

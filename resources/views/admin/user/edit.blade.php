@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', '/ Create')
+@section('title', '/ Edit')
 @section('content')
 
     <div class="card mb-3">
@@ -56,7 +56,7 @@
                     </label>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>

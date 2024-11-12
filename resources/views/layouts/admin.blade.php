@@ -104,10 +104,10 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Bài viết </span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link"  href="">
+        <li class="nav-item @if ($currentRoute === 'categories.index') active @endif">
+            <a class="nav-link"  href="{{route('categories.index')}}">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Địa điểm </span></a>
+                <span>Danh mục</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="">
