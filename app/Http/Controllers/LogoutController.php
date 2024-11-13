@@ -16,7 +16,6 @@ class LogoutController extends Controller
      */
     public function perform()
     {
-        dd('sss');
         Session::flush();
 
         Auth::logout();

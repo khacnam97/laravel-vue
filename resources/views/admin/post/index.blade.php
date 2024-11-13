@@ -1,18 +1,18 @@
 @extends('layouts.admin')
-@section('title', '/ Người dùng')
+@section('title', '/ Bài Viết')
 @section('content')
 
     <div class="card mb-3">
         <div class="card-header">
             <em class="fas fa-table"></em>
             Bảng dữ liệu người dùng </div>
-{{--        @if(count($errors)>0)--}}
-{{--            <div class="alert alert-danger">--}}
-{{--                @foreach($errors->all() as $err)--}}
-{{--                    {{$err}} <br>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
-{{--        @endif--}}
+        {{--        @if(count($errors)>0)--}}
+        {{--            <div class="alert alert-danger">--}}
+        {{--                @foreach($errors->all() as $err)--}}
+        {{--                    {{$err}} <br>--}}
+        {{--                @endforeach--}}
+        {{--            </div>--}}
+        {{--        @endif--}}
         @if(Session::has('success'))
             <div class="alert alert-success">
                 {{Session::get('success')}}
@@ -40,22 +40,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach($users as $key => $user)
-                            <tr>
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->email}}</td>
-                                <td>{{$user->address}}</td>
-                                <td>{{$user->roleName == 'admin' ? 'admin' : 'User Thường'}}</td>
-                                <td>
-                                    @if(Auth::id() != $user->id )
-                                        <a class="btn btn-primary" href="{{route('user.edit', $user->id)}}">Edit</a>
-                                        <button type="button" class="btn btn-danger" >
-                                            <a href="{{route('user.delete', $user->id)}}" style="color: white;text-decoration: none;" onclick="return confirm ('bạn có muốn xóa user {{$user->name}}')">Xóa</a>
-                                        </button>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
+                    @foreach($users as $key => $user)
+                        <tr>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->address}}</td>
+                            <td>{{$user->roleName == 'admin' ? 'admin' : 'User Thường'}}</td>
+                            <td>
+                                @if(Auth::id() != $user->id )
+                                    <a class="btn btn-primary" href="{{route('user.edit', $user->id)}}">Edit</a>
+                                    <button type="button" class="btn btn-danger" >
+                                        <a href="{{route('user.delete', $user->id)}}" style="color: white;text-decoration: none;" onclick="return confirm ('bạn có muốn xóa user {{$user->name}}')">Xóa</a>
+                                    </button>
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

@@ -34,4 +34,4 @@ Route::namespace('Api')->group(function (){
     Route::resource('course', 'CourseController')->except(['create', 'edit']);
 });
 
-Route::post('login', [AuthController::class, 'login'])->name('login');
+//Route::post('login', [AuthController::class, 'login'])->name('login');
