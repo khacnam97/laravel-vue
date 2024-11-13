@@ -26,33 +26,29 @@
 
         <div class="card-body">
             <div style="margin-bottom: 15px">
-                <a href="{{ route('user.create') }}" class="btn btn-success "><i class="fas fa-plus"></i> Thêm</a>
+                <a href="{{ route('post.create') }}" class="btn btn-success "><i class="fas fa-plus"></i> Thêm</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Role</th>
+                        <th>Title</th>
+                        <th>Describer</th>
+                        <th>Category</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $key => $user)
+                    @foreach($posts as $key => $post)
                         <tr>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->address}}</td>
-                            <td>{{$user->roleName == 'admin' ? 'admin' : 'User Thường'}}</td>
+                            <td>{{$post->title}}</td>
+                            <td>{{$post->describer}}</td>
+                            <td>{{$post->categoryName}}</td>
                             <td>
-                                @if(Auth::id() != $user->id )
-                                    <a class="btn btn-primary" href="{{route('user.edit', $user->id)}}">Edit</a>
-                                    <button type="button" class="btn btn-danger" >
-                                        <a href="{{route('user.delete', $user->id)}}" style="color: white;text-decoration: none;" onclick="return confirm ('bạn có muốn xóa user {{$user->name}}')">Xóa</a>
-                                    </button>
-                                @endif
+                                <a class="btn btn-primary" href="{{route('user.edit', $post->id)}}">Edit</a>
+                                <button type="button" class="btn btn-danger" >
+                                    <a href="{{route('post.delete', $post->id)}}" style="color: white;text-decoration: none;" onclick="return confirm ('bạn có muốn xóa {{$post->title}}')">Xóa</a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach

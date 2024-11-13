@@ -43,7 +43,7 @@
                             <td>
                                 <a class="btn btn-primary" href="{{route('categories.edit', $ca->id)}}">Edit</a>
                                 <button type="button" class="btn btn-danger" >
-                                    <a href="{{route('categories.delete', $ca->id)}}" style="color: white;text-decoration: none;" onclick="return confirm ('bạn có muốn xóa user {{$ca->name}}')">Xóa</a>
+                                    <a href="{{route('categories.delete', $ca->id)}}" style="color: white;text-decoration: none;" onclick="return confirm ('bạn có muốn xóa {{$ca->name}}')">Xóa</a>
                                 </button>
                             </td>
                         </tr>

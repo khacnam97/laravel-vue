@@ -67,6 +67,9 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/admin/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
 
         Route::get('/admin/post', [PostController::class, 'adminIndex'])->name('post.index');
+        Route::get('/admin/post/create', [PostController::class, 'create'])->name('post.create');
+        Route::post("post-add-new", [PostController::class, 'addNew'])->name('post.addNew');
+        Route::get('/admin/post/delete/{id}', [PostController::class, 'delete'])->name('post.delete');
 
         Route::get('/admin/categories', [CategoriesController::class, 'index'])->name('categories.index');
         Route::get('/admin/categories/create', [CategoriesController::class, 'create'])->name('categories.create');
