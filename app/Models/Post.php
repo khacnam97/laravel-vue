@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'describer', 'category_id'];
     public function photos()
     {
         return $this->hasMany('App\Models\Photo');

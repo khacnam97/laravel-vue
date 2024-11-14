@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Http\Resources\PostCollection;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -48,13 +51,25 @@ class PostController extends Controller
     public function delete($id)
     {
         $post = Post::find($id);
-
         $post->delete();
         return response()->json('successfully deleted');
     }
 
     public function adminIndex() {
-        $post = Post::all();
-        return view('admin/post/index', ['post' => $post]);
+        $posts = DB::table('posts')->select(['posts.*', 'categories.name as categoryName'])
+            ->join('categories', 'categories.id', '=', 'posts.category_id')
+            ->get();
+        return view('admin/post/index', ['posts' => $posts]);
+    }
+
+    public function create(){
+        $ca = Category::all();
+        return view("admin/post/create", ['ca' => $ca]);
+    }
+
+    public function addNew(PostRequest $request){
+        $post = new  Post($request->all());
+        $post->save();
+        return redirect(route("post.index"));
     }
 }

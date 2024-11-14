@@ -99,8 +99,8 @@
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Người dùng</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="">
+        <li class="nav-item @if ($currentRoute === 'post.index') active @endif">
+            <a class="nav-link" href="{{route('post.index')}}">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Bài viết </span></a>
         </li>
