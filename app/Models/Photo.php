@@ -11,6 +11,6 @@ class Photo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['photo_path', 'flag', 'post_id'];
+    protected $fillable = ['photo_path', 'note', 'flag', 'post_id'];
 
 }

@@ -57,11 +57,21 @@
                         </textarea>
                     </div>
                 </div>
-                <div class="form-row ">
-                    <div class="input-group control-group increment" >
+                <div class=" form-row custom-file" style="height: auto;">
+
+                    <h5>Chọn ảnh</h5>
+                    <div class="input-group control-group increment col-md-6" >
                         <input type="file" name="filename[]" class="form-control" accept="image/x-png,image/jpeg" required="" accept="image|jpeg|x-png">
                         <div class="input-group-btn">
                             <button class="btn btn-primary add" type="button"><i class="glyphicon glyphicon-plus" id="add"></i>Thêm</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 clone" style="overflow: hidden;">
+                        <div class="col-md-6 control-group input-group" style="margin-top:10px">
+                            <input type="file" name="filename[]" class="form-control" accept="image/x-png,image/jpeg">
+                            <div class="input-group-btn">
+                                <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove" id="removed"></i> Xóa</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -71,4 +81,33 @@
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $(".add").click(function(){
+                var html = $(".clone").html();
+                $(".increment").after(html);
+            });
+
+            $("body").on("click",".btn-danger",function(){
+                $(this).parents(".control-group").remove();
+            });
+
+            var ab=$(".clone");
+            ab.hide();
+
+            CKEDITOR.replace('describer');
+
+            $("#submit").on('click',function(){
+                if($("#errouser").css('display') == 'block' || $("#erroplace").css('display') == 'block'){
+                    alert("Erros! Vui lòng kiểm tra lại thông tin");
+                    return false;
+                }
+            })
+
+        });
+
+
+    </script>
 @endsection

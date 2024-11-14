@@ -68,6 +68,7 @@ class PostController extends Controller
     }
 
     public function addNew(PostRequest $request){
+        dd($request->file('filename'));
         $post = new  Post($request->all());
         $post->save();
         return redirect(route("post.index"));

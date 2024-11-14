@@ -8,6 +8,8 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PostRequest extends FormRequest
 {
+    private $filename = array();
+
     public function authorize(): bool
     {
         return true;
