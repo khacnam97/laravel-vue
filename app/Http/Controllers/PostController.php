@@ -67,9 +67,22 @@ class PostController extends Controller
         return view("admin/post/create", ['ca' => $ca]);
     }
 
-    public function addNew(PostRequest $request){
-        $post = new  Post($request->all());
-        $post->save();
-        return redirect(route("post.index"));
+    public function addNew(Request $request){
+        dd($request->title);
+        $request->validate([
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+//        foreach ($request->file('images') as $image) {
+//            $path = $image->store('images', 'public');
+//
+////            Photo::create([
+////                'image_path' => $path
+////            ]);
+//        }
+////        dd($request->all());
+//        $post = new  Post($request->all());
+//        $post->save();
+        return response()->json(['success' => true,'message' => 'Upload thành công']);
     }
 }
